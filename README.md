@@ -10,5 +10,5 @@ First code made from studies related to Generative Art contents using Python and
 
 
 <div align="center">
-  <img height= "200em" src="GenerativeArt2.gif">
+  <img height= "200em" src="GenarativeArt2.gif">
 </div>
