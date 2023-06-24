@@ -1,64 +1,20 @@
-import random
+#importe a biblioteca
 import turtle
 
-CANVAS_SIZE = 500
-DENSITY = 12
+#definindo as cores
+colors = ['purple', 'blue', 'green', 'pink', 'yellow', 'orange']
 
-t = turtle.Turtle()
-s = turtle.Screen()
-s.setup(CANVAS_SIZE, CANVAS_SIZE)
+#instaciando a biblioteca (turtle) e definindo a cor do background
+t = turtle.Pen()
+turtle.bgcolor('black')
 
-t.penup()
-
-def draw_line(row, col):
-    pass
-
-for row in range(DENSITY):
-    for col in range(DENSITY):
-        draw_line(row, col)
-
-def draw_line(row, col):
-    lower_left = (
-        (col * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        (row * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-    upper_right = (
-        ((col + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        ((row + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-
-    t.goto(lower_left)
-    t.pendown()
-    t.goto(upper_right)
-    t.penup()        
-
-def draw_line(row, col):
-    lower_left = (
-        (col * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        (row * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-    upper_right = (
-        ((col + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        ((row + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-    lower_right = (
-        ((col + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        (row * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-    upper_left = (
-        (col * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2,
-        ((row + 1) * CANVAS_SIZE / DENSITY) - CANVAS_SIZE / 2
-    )
-
-    res = random.randint(0, 1)
-
-    if res == 0:
-        t.goto(upper_left)
-        t.pendown()
-        t.goto(lower_right)
-        t.penup()
-    else:
-        t.goto(lower_left)
-        t.pendown()
-        t.goto(upper_right)
-        t.penup()
+#os movimentos:
+for x in range(200): #você pode escolher o numero de interações
+    #definindo a cor
+    t.pencolor(colors[x%6])
+    #defina a largura
+    t.width(x/100+1)
+    #movimentando o turtle
+    t.forward(x)
+    #girando o turtle
+    t.left(59)
